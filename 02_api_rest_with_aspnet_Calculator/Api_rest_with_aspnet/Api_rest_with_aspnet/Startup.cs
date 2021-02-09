@@ -1,3 +1,5 @@
+using Api_rest_with_aspnet.Services;
+using Api_rest_with_aspnet.Services.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +29,7 @@ namespace Api_rest_with_aspnet
         {
 
             services.AddControllers();
+            services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
