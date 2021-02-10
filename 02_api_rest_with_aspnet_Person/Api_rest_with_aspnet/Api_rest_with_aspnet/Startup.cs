@@ -1,17 +1,12 @@
+using Api_rest_with_aspnet.Model.Context;
 using Api_rest_with_aspnet.Services;
 using Api_rest_with_aspnet.Services.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Api_rest_with_aspnet
 {
@@ -29,6 +24,12 @@ namespace Api_rest_with_aspnet
         {
 
             services.AddControllers();
+
+            var connection = Configuration["MySQLConnection:MySQLConnectionString"];
+            services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
+
+
+            //Dependency Injection
             services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
 
