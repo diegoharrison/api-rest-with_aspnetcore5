@@ -14,6 +14,6 @@ namespace Api_rest_with_aspnet.Model.Context
 
         }
 
-        public DbSet<Person> persons { get; set; }
+        public DbSet<Person> Persons { get; set; }
     }
 }

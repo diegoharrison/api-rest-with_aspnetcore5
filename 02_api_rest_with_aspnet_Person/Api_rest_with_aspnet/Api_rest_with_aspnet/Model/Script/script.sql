@@ -1,8 +1,8 @@
-CREATE TABLE `person` (
-  `ID` bigint NOT NULL AUTO_INCREMENT,
-  `ADDRESS` varchar(100) NOT NULL,
-  `FIRST_NAME` varchar(80) NOT NULL,
-  `GENDER` varchar(6) NOT NULL,
-  `LAST_NAME` varchar(80) NOT NULL,
-  PRIMARY KEY (`ID`)
+create table `person` (
+  `id` bigint not null auto_increment,
+  `address` varchar(100) not null,
+  `first_name` varchar(80) not null,
+  `gender` varchar(6) not null,
+  `last_name` varchar(80) not null,
+  primary key (`id`)
 )
